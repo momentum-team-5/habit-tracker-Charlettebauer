@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="habit-show centerer">
+    <h2 class="habit-header"> 
+        {% if habit.is_negative %}
+            {% if habit.number == 1 %}
+            <p>{{habit.verb|title}} less than {{habit.number|floatformat:"-2"}} {{habit.noun_singular}} per day.</p>
+            {% else %}
+            <p>{{habit.verb|title}} fewer than {{habit.number|floatformat:"-2"}} {{habit.noun}} per day.</p>
+            {% endif %}
+        {% else %}
+            {% if habit.number == 1 %}
+            <p>{{habit.verb|title}} at least {{habit.number|floatformat:"-2"}} {{habit.noun_singular}} per day.</p>
+            {% else %}
+            <p>{{habit.verb|title}} at least {{habit.number|floatformat:"-2"}} {{habit.noun}} per day.</p>
+            {% endif %}
+        {% endif %}
+    </h2>
+    <div class="list-link-div v-center">
+        <a href="{% url 'list_habits' %}" class="list-link">Return to Your Habits</a>
+    </div>
+</div>
+<div class="graph-container">
+    <canvas id="line-graph"></canvas>
+</div>
+<div class="record-list">
+    
+</div>

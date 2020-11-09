@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="welcome-container v-space">
+    
+        </div>
+    <div class="welcome-div v-center">
+        <div class="center">
+            <h2 class="welcome-header">Welcome to Your New Life!</h2>
+        </div>
+        <div class="center">
+            <div class="login-div">
+                <p>Please login or register to continue.</p>
+            </div>
+        <a href="{% url 'habits_list' %}">List of Habits</a>    
+        </div>
+    </div>
+   
+</div>
+{% endblock %}
